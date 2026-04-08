@@ -1,0 +1,227 @@
+/* GENERAL */
+body {
+    background-color: #f6f2e6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* HERO VIDEO */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.video-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.video-bg {
+    width: 100%; height: 100%; object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+/* PERFILES */
+.profile-img {
+    width: 180px; height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover .profile-img {
+    transform: scale(1.05);
+}
+
+/* CARRUSEL RECUERDOS */
+.bg-recuerdos {
+    background-color: rgba(146, 148, 98, 0.1);
+}
+
+.image-recuerdo {
+    height: 500px;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+    background: #000; /* Fondo negro para fotos verticales */
+}
+
+.bg-dark-custom {
+    background: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+/* TIMELINE HORIZONTAL CORREGIDO */
+.timeline-container {
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #dc3545;
+    z-index: 1;
+}
+
+.timeline-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+@media (min-width: 768px) {
+    .card-up { margin-bottom: 100px; }
+    .card-down { margin-top: 100px; }
+}
+
+/* CARTA FINAL */
+.detalle {
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9)), 
+                url('fotos/portada.jpeg') center/cover;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+}
+
+/* ANIMACIONES */
+.animate-pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* TIMELINE HORIZONTAL DENTRO DE CARRUSEL */
+.timeline-horizontal {
+    position: relative;
+    padding: 80px 0; /* Espacio para que las tarjetas no se corten */
+    min-height: 450px;
+}
+
+/* La línea roja fija que atraviesa todo el carrusel */
+.timeline-line-bg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #ff6b6b;
+    z-index: 0; /* Por detrás de todo */
+    transform: translateY(-50%);
+}
+
+.timeline-node {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* El punto circular en la línea para cada hito */
+.timeline-node::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #ff6b6b;
+    border: 4px solid #f6f2e6; /* Color del fondo del body para que parezca un hueco */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.timeline-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: inline-block;
+    width: 90%;
+}
+
+/* Efecto Zig-Zag */
+@media (min-width: 768px) {
+    .card-up { margin-bottom: 110px; }
+    .card-down { margin-top: 110px; }
+}
+
+/* Flechas de navegación del timeline */
+.custom-nav {
+    width: 5%;
+    z-index: 10;
+}
+
+/* Ajuste para móviles: las tarjetas se apilan y la línea desaparece para que se vea bien */
+@media (max-width: 767px) {
+    .timeline-line-bg { display: none; }
+    .timeline-node::after { display: none; }
+    .card-up, .card-down { margin: 10px 0; width: 100%; }
+    .timeline-horizontal { min-height: auto; padding: 20px 0; }
+}
+
+/* Tarjeta destacada 2026 */
+.highlight-2026 {
+    margin-bottom: 140px !important; /* La aleja de la línea para que no la tape */
+    box-shadow: 0 10px 30px rgba(220, 53, 69, 0.2) !important;
+}
+
+.highlight-2026 h4 {
+    color: #dc3545;
+}
+
+/* Ajuste para que en móvil el texto largo sea cómodo de leer */
+@media (max-width: 767px) {
+    .timeline-line-bg, .timeline-node::after {
+        display: none;
+    }
+    .timeline-horizontal {
+        min-height: auto;
+    }
+    .highlight-2026 {
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Asegura que el contenedor del carrusel tenga altura suficiente para textos largos */
+.timeline-horizontal {
+    position: relative;
+    padding: 60px 0;
+    min-height: 550px; /* Un poco más de altura para el texto del 2026 */
+    display: flex;
+    align-items: center;
+}

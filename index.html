@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Florería Primavera</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <style>
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+          url("https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1400&q=80") center/cover;
+        min-height: 70vh;
+      }
+
+      .hero h1,
+      .hero p {
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+      }
+
+      .flower-card img {
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .section-title {
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 70%;
+        height: 3px;
+        background-color: var(--bs-success);
+        border-radius: 999px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#inicio">Florería Primavera</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Alternar navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+            <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header id="inicio" class="hero d-flex align-items-center text-white">
+      <div class="container text-center">
+        <h1 class="display-4 fw-bold">Flores frescas para cada ocasión</h1>
+        <p class="lead">Arreglos personalizados, entregas el mismo día y detalles que enamoran.</p>
+        <a href="#catalogo" class="btn btn-lg btn-light text-success fw-semibold">Ver catálogo</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="catalogo" class="py-5">
+        <div class="container">
+          <h2 class="section-title mb-4">Nuestro catálogo</h2>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <article class="card flower-card h-100 shadow-sm border-0">
+                <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Ramo de rosas rojas" />
+                <div class="card-body">
+                  <h3 class="h5 card-title">Rosas clásicas</h3>
+                  <p class="card-text">El detalle ideal para aniversarios y celebraciones especiales.</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <span class="fw-bold text-success">Desde $25</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <article class="card flower-card h-100 shadow-sm border-0">
+                <img src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Arreglo primaveral colorido" />
+                <div class="card-body">
+                  <h3 class="h5 card-title">Arreglo primaveral</h3>
+                  <p class="card-text">Combinación vibrante de flores de temporada para alegrar cualquier espacio.</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <span class="fw-bold text-success">Desde $30</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <article class="card flower-card h-100 shadow-sm border-0">
+                <img src="https://images.unsplash.com/photo-1487073240288-854ac7f1bb3c?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Bouquet de girasoles" />
+                <div class="card-body">
+                  <h3 class="h5 card-title">Bouquet de girasoles</h3>
+                  <p class="card-text">Luz y energía en un ramo perfecto para cumpleaños y regalos espontáneos.</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <span class="fw-bold text-success">Desde $22</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicios" class="py-5 bg-light">
+        <div class="container">
+          <h2 class="section-title mb-4">Servicios</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="p-4 bg-white h-100 rounded-3 shadow-sm">
+                <h3 class="h5">Decoración de eventos</h3>
+                <p class="mb-0">Bodas, XV años, aniversarios y eventos corporativos con diseño floral profesional.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-4 bg-white h-100 rounded-3 shadow-sm">
+                <h3 class="h5">Entrega a domicilio</h3>
+                <p class="mb-0">Cobertura en toda la ciudad con seguimiento de pedido y entrega puntual.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-4 bg-white h-100 rounded-3 shadow-sm">
+                <h3 class="h5">Arreglos personalizados</h3>
+                <p class="mb-0">Creamos arreglos a medida según tu presupuesto, mensaje y estilo favorito.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="py-5">
+        <div class="container">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+              <h2 class="section-title mb-4">Contáctanos</h2>
+              <p class="mb-3">📍 Calle Jardines 123, Centro</p>
+              <p class="mb-3">📞 +1 (555) 234-9876</p>
+              <p class="mb-0">🕒 Lunes a sábado, 9:00 AM - 7:00 PM</p>
+            </div>
+            <div class="col-lg-6">
+              <form class="p-4 bg-light rounded-3 shadow-sm">
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input id="nombre" type="text" class="form-control" placeholder="Tu nombre" />
+                </div>
+                <div class="mb-3">
+                  <label for="telefono" class="form-label">Teléfono</label>
+                  <input id="telefono" type="tel" class="form-control" placeholder="Tu teléfono" />
+                </div>
+                <div class="mb-3">
+                  <label for="mensaje" class="form-label">Mensaje</label>
+                  <textarea id="mensaje" class="form-control" rows="4" placeholder="¿Qué tipo de arreglo necesitas?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Enviar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-success text-white py-3">
+      <div class="container text-center">
+        <small>© 2026 Florería Primavera · Hecho con amor y flores frescas.</small>
+      </div>
+    </footer>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
