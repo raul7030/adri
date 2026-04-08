@@ -105,7 +105,7 @@ body {
 
 /* CARTA FINAL */
 .detalle {
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6)), 
                 url('fotos/portada.jpeg') center/cover;
     border-radius: 30px;
     border: 1px solid #ddd;
