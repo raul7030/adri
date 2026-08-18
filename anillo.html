@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Mensaje Especial para Ti | Promesa</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe3e3 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .promise-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(220, 53, 69, 0.15);
+            border: 1px solid rgba(220, 53, 69, 0.1);
+            max-width: 650px;
+            width: 90%;
+            overflow: hidden;
+            position: relative;
+        }
+        .promise-icon {
+            font-size: 4rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .btn-yes {
+            background-color: #dc3545;
+            color: white;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .btn-yes:hover {
+            background-color: #bb2d3b;
+            transform: scale(1.05);
+            color: white;
+        }
+        .btn-no {
+            border: 2px solid #6c757d;
+            color: #6c757d;
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .interactive-container {
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body class="py-5">
+
+    <div class="promise-card p-4 p-md-5 text-center my-auto">
+        
+        <div class="promise-icon mb-3">
+            💍
+        </div>
+
+        <h1 class="fw-bold text-danger mb-3">Adri, mi flaquita hermosa</h1>
+        
+        <p class="lead text-dark fs-6 lh-lg mb-4">
+            Hemos recorrido un camino increíble desde aquel <strong>13 de agosto de 2018</strong>. Pasamos por risas, momentos difíciles, reconstruimos nuestra confianza y aprendimos a solucionar cualquier problema juntos hasta llegar a este 2026.
+        </p>
+        
+        <p class="text-muted fs-6 lh-lg mb-4">
+            Hoy estamos a punto de dar nuestro gran paso hacia diciembre y comenzar este nuevo viaje juntos. Por eso, no quiero que esto sea solo una promesa en palabras, quiero darte este <strong>anillo de promesa</strong> como símbolo de mi compromiso absoluto de cuidarte, respetarte, apoyarte y construir a tu lado ese futuro que tanto soñamos.
+        </p>
+
+        <h4 class="fw-bold text-dark my-4 px-2">
+            ¿Aceptas llevar este anillo de promesa y seguir construyendo nuestra vida juntos?
+        </h4>
+
+        <div class="interactive-container mt-4" id="buttonArea">
+            <button class="btn btn-yes shadow" id="btnYes" onclick="aceptarPromesa()">
+                ❤️ ¡Sí, acepto!
+            </button>
+            <button class="btn btn-no" id="btnNo" onclick="noLista()">
+                No estoy lista
+            </button>
+        </div>
+
+        <!-- Mensaje de respuesta tras aceptar -->
+        <div id="responseMessage" class="d-none mt-4 p-4 bg-light rounded-4 border border-danger">
+            <h3 class="text-danger fw-bold mb-2">¡Sabía que me dirías que sí! 🥰✨</h3>
+            <p class="mb-3 text-dark">
+                Te amo el 4 veces más mi vida. Gracias por elegirme cada día y por permitirme recorrer este camino junto a ti. ¡Este es solo el comienzo de nuestra mejor etapa!
+            </p>
+            <a href="amor.html" class="btn btn-outline-danger btn-sm rounded-pill mt-2">
+                ⬅️ Volver a nuestra historia
+            </a>
+        </div>
+
+    </div>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let contadorNo = 0;
+        const mensajesNo = [
+            "¿Segura, ojete? 🥺",
+            "Piénsalo bien flaquita... ❤️",
+            "¡El 4 más taradita de mi corazón! 🙈",
+            "¡No hay opción de huir! 😉",
+            "¡Te amo demasiado para aceptar un no! 💖"
+        ];
+
+        function noLista() {
+            const btnNo = document.getElementById('btnNo');
+            const btnYes = document.getElementById('btnYes');
+            
+            if (contadorNo < mensajesNo.length) {
+                btnNo.innerHTML = mensajesNo[contadorNo];
+                contadorNo++;
+                
+                // Hace crecer el botón de Aceptar cada vez que presiona "No estoy lista"
+                let currentSize = parseFloat(window.getComputedStyle(btnYes).fontSize);
+                btnYes.style.fontSize = (currentSize + 3) + 'px';
+                btnYes.style.padding = '15px ' + (35 + contadorNo * 5) + 'px';
+            } else {
+                // Desaparece el botón "No estoy lista"
+                btnNo.style.display = 'none';
+            }
+        }
+
+        function aceptarPromesa() {
+            document.getElementById('buttonArea').classList.add('d-none');
+            document.getElementById('responseMessage').classList.remove('d-none');
+        }
+    </script>
+</body>
+</html>
